@@ -225,18 +225,32 @@ app.post('/register', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-    const { email, password } = req.body;
-    const user = users.find(u => u.email === email && u.password === password);
-    if (user) {
-        const token = jwt.sign({ email }, SECRET_KEY, { expiresIn: '1h' });
-        return res.json({ token, email });
+    try {
+        const { email, password } = req.body;
+        const user = users.find(u => u.email === email && u.password === password);
+        if (user) {
+            const token = jwt.sign({ email }, SECRET_KEY, { expiresIn: '1h' });
+            return res.json({ token, email });
+        }
+        res.status(401).json({ message: 'Invalid credentials' });
+    } catch (error) {
+        console.error('Login error:', error);
+        res.status(500).json({ message: 'Internal server error' });
     }
-    res.status(401).json({ message: 'Invalid credentials' });
+});
+
+// Global Error Handler
+app.use((err, req, res, next) => {
+    console.error('Unhandled Error:', err);
+    res.status(500).send('Something went wrong on the server.');
 });
 
 // Entry point for Cloud Run / Functions
 exports.helloHttp = app;
 
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server listening on port ${PORT}`);
-});
+// Start server only if run directly (not as a function)
+if (require.main === module) {
+    app.listen(PORT, '0.0.0.0', () => {
+        console.log(`Server listening on port ${PORT}`);
+    });
+}
