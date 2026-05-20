@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
-const SECRET_KEY = 'https://server-sf-981505851604.europe-west1.run.app'; // In production, use env variables
+const SECRET_KEY = process.env.SECRET_KEY || 'u89u893njkuw9r98q9038uoiewfjkewru9e2rui390483204832iperjwor3243hure3u9r032ur032ut2i9tu048320ruewroewurilewrwe90ru23432op4ek249i023432y98er2or2390832uur89u32y3298ry32yr9823ry238ry329'; // Reads from Secret Manager in Cloud Run
 
 app.use(cors());
 app.use(bodyParser.json());
