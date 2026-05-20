@@ -18,9 +18,9 @@ export default function RootLayout({ children }) {
                             SyntaxForge
                         </a>
                         <div className="flex gap-6 items-center">
-                            <a href="/" className="hover:text-blue-400 transition">Courses</a>
+                            <a href="/" className="hover:text-white transition">Courses</a>
                             <a href="/login" className="px-4 py-2 border border-zinc-700 rounded-lg hover:bg-zinc-800 transition">Login</a>
-                            <a href="/register" className="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-500 transition">Get Started</a>
+                            <a href="/register" className="px-4 py-2 bg-white text-black rounded-lg hover:bg-zinc-200 transition">Get Started</a>
                         </div>
                     </nav>
                 </header>

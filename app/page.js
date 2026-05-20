@@ -22,7 +22,7 @@ export default function Home() {
                         className="card group cursor-pointer"
                     >
                         <div className="flex justify-between items-start mb-4">
-                            <span className="text-sm font-mono text-blue-500 bg-blue-500/10 px-2 py-1 rounded">
+                            <span className="text-sm font-mono text-white bg-zinc-800 px-2 py-1 rounded">
                                 Module {index + 1}
                             </span>
                             {index >= 2 && (
@@ -31,13 +31,13 @@ export default function Home() {
                                 </span>
                             )}
                         </div>
-                        <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition">
+                        <h3 className="text-xl font-bold mb-2 group-hover:text-white transition">
                             {module.title}
                         </h3>
                         <p className="text-zinc-400 text-sm">
                             {module.description}
                         </p>
-                        <div className="mt-6 flex items-center text-sm font-semibold text-blue-500 group-hover:gap-2 transition-all">
+                        <div className="mt-6 flex items-center text-sm font-semibold text-white group-hover:gap-2 transition-all">
                             Start Learning <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                         </div>
                     </a>

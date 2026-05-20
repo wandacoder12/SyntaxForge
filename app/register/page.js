@@ -52,7 +52,7 @@ export default function RegisterPage() {
                         <label className="block text-sm font-medium text-zinc-400 mb-2">Email Address</label>
                         <input
                             type="email"
-                            className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 focus:border-blue-500 outline-none transition"
+                            className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 focus:border-white outline-none transition"
                             placeholder="name@example.com"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -63,7 +63,7 @@ export default function RegisterPage() {
                         <label className="block text-sm font-medium text-zinc-400 mb-2">Password</label>
                         <input
                             type="password"
-                            className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 focus:border-blue-500 outline-none transition"
+                            className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 focus:border-white outline-none transition"
                             placeholder="Min. 8 characters"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
@@ -76,7 +76,7 @@ export default function RegisterPage() {
                 </form>
 
                 <p className="mt-8 text-center text-zinc-500 text-sm">
-                    Already have an account? <a href="/login" className="text-blue-500 hover:underline">Sign in</a>
+                    Already have an account? <a href="/login" className="text-white hover:underline">Sign in</a>
                 </p>
             </div>
         </div>

@@ -5,11 +5,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #0a0a0c;
+  --background: #000000;
   --foreground: #ffffff;
-  --accent: #3b82f6;
-  --card-bg: #16161b;
-  --border: #27272a;
+  --accent: #ffffff;
+  --card-bg: #0a0a0a;
+  --border: #1a1a1a;
+  --zinc-border: #27272a;
 }
 
 body {
@@ -20,25 +21,29 @@ body {
 }
 
 .glass {
-  background: rgba(22, 22, 27, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .hero-gradient {
-  background: radial-gradient(circle at top center, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle at top center, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
 }
 
 .button-primary {
-  @apply px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-semibold transition-all duration-300 shadow-lg shadow-blue-500/20 active:scale-95;
+  @apply px-6 py-3 bg-white hover:bg-zinc-200 text-black rounded-xl font-semibold transition-all duration-300 active:scale-95;
+}
+
+.button-secondary {
+  @apply px-6 py-3 bg-transparent border border-zinc-800 hover:border-white text-white rounded-xl font-semibold transition-all duration-300 active:scale-95;
 }
 
 .card {
-  @apply p-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 hover:border-blue-500/50 transition-all duration-300;
+  @apply p-6 rounded-2xl border border-zinc-900 bg-zinc-950/50 hover:border-zinc-700 transition-all duration-300;
 }
