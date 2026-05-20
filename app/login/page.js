@@ -14,7 +14,7 @@ function LoginForm() {
         e.preventDefault();
         try {
             // In a real app, you would fetch from your node backend
-            const response = await fetch('http://localhost:8080/login', {
+            const response = await fetch('https://server-sf-981505851604.europe-west1.run.app/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password }),

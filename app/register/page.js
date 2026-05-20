@@ -12,7 +12,7 @@ export default function RegisterPage() {
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:8080/register', {
+            const response = await fetch('https://server-sf-981505851604.europe-west1.run.app/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password }),
