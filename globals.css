@@ -36,12 +36,86 @@ body {
 
 .card {
     padding: 1.5rem;
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     border: 1px solid #1a1a1a;
     background: rgba(10, 10, 10, 0.5);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card:hover {
     border-color: #3f3f46;
+    transform: translateY(-4px);
+    background: rgba(24, 24, 27, 0.5);
+}
+
+@media (max-width: 768px) {
+    .hero-gradient {
+        background: radial-gradient(circle at top center, rgba(255, 255, 255, 0.03) 0%, transparent 50%), #000000;
+    }
+}
+
+/* Custom Utilities for Proximity and Touch */
+@media (hover: none) {
+    .card:hover {
+        transform: none;
+    }
+}
+
+.prose h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+}
+
+.prose h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    color: #f4f4f5;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.prose p {
+    color: #a1a1aa;
+    margin-bottom: 1rem;
+    line-height: 1.625;
+}
+
+.prose code {
+    border-radius: 0.25rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.875rem;
+    color: #ffffff;
+}
+
+.prose pre {
+    background-color: #09090b;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid #27272a;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+}
+
+.prose pre code {
+    background-color: transparent;
+    padding: 0;
+    color: #d4d4d8;
+}
+
+.prose ul,
+.prose ol {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    color: #a1a1aa;
+}
+
+.prose li {
+    margin-bottom: 0.5rem;
 }
