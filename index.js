@@ -234,6 +234,9 @@ app.post('/login', (req, res) => {
     res.status(401).json({ message: 'Invalid credentials' });
 });
 
+// Entry point for Cloud Run / Functions
+exports.helloHttp = app;
+
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server listening on port ${PORT}`);
 });
