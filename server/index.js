@@ -54,6 +54,12 @@ app.get('/protected', verifyToken, (req, res) => {
     res.json({ message: 'Access granted', user: req.user });
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server listening on port ${PORT}`);
-});
+// Export for Cloud Run Functions (if entry point is helloHttp)
+exports.helloHttp = app;
+
+// Start server for standard Cloud Run
+if (require.main === module) {
+    app.listen(PORT, '0.0.0.0', () => {
+        console.log(`Server listening on port ${PORT}`);
+    });
+}
